@@ -1,2 +1,2 @@
-
-<a href="sminfotechdemo.netlify.app" target="_blank">Visit Website</a>
+## 🌐 Live Demo
+[Click here to view project](sminfotechdemo.netlify.app)
