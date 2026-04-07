@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | SM Infotech</title>
+  <meta name="description" content="Insights, tutorials and industry news from the SM Infotech team on web development, AI, design, and digital marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#8b5cf6', secondary: '#a855f7', accent: '#06b6d4', dark: '#0a0a0f', darker: '#0f172a' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark text-white antialiased">
+
+  <div class="custom-cursor hidden md:block"></div>
+  <div class="loader"><div class="loader-circle"></div></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center space-x-2 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight group-hover:text-primary transition-colors">SM <span class="text-primary">Infotech</span></span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium">Home</a>
+          <a href="about.html" class="nav-link font-medium">About</a>
+          <a href="services.html" class="nav-link font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link active font-medium">Blog</a>
+          <a href="contact.html" class="nav-link font-medium">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-300 hover:text-white transition-colors font-medium">Login</a>
+          <a href="contact.html" class="btn-primary magnetic-btn text-sm">Get Started</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="hamburger text-gray-300 hover:text-white focus:outline-none">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-darker glass border-l border-primary/20 z-50 p-8 pt-24">
+      <div class="flex flex-col space-y-6">
+        <a href="index.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Home</a>
+        <a href="about.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">About</a>
+        <a href="services.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Services</a>
+        <a href="portfolio.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Portfolio</a>
+        <a href="blog.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">Blog</a>
+        <a href="contact.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Contact</a>
+        <hr class="border-gray-700">
+        <a href="login.html" class="text-xl font-medium text-gray-400 hover:text-white">Login</a>
+        <a href="contact.html" class="btn-primary text-center">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative pt-40 pb-24 overflow-hidden">
+    <div class="absolute inset-0 animated-gradient opacity-30"></div>
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl float-animation"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 reveal-up">
+        <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Insights & Ideas
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 reveal-up">Our <span class="gradient-text">Blog</span></h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto reveal-up">Thoughts, tutorials, and industry insights from the SM Infotech team.</p>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="py-12 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal-up">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+          <i data-lucide="star" class="w-4 h-4 mr-2"></i> Featured Post
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center reveal-up">
+        <div class="portfolio-card group cursor-pointer rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop&q=80" alt="AI Blog" class="w-full h-80 object-cover">
+          <div class="portfolio-overlay">
+            <div>
+              <span class="text-primary font-medium text-sm">Read Article →</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="industry-tag px-3 py-1 rounded-full text-xs font-medium text-primary">AI & Technology</span>
+            <span class="text-gray-500 text-sm">March 28, 2024</span>
+            <span class="text-gray-500 text-sm">· 8 min read</span>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 hover:text-primary transition-colors cursor-pointer">The Future of AI in Enterprise Software Development</h2>
+          <p class="text-gray-400 text-lg mb-6 leading-relaxed">Explore how generative AI, large language models, and AI-assisted coding are reshaping how enterprises build, test, and deploy software in 2024 and beyond.</p>
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&q=80" alt="Author" class="w-10 h-10 rounded-full object-cover">
+            <div>
+              <div class="font-medium text-white text-sm">Priya Mehta</div>
+              <div class="text-gray-500 text-xs">CTO, SM Infotech</div>
+            </div>
+          </div>
+          <a href="#" class="btn-primary">Read Full Article <i data-lucide="arrow-right" class="w-4 h-4 inline ml-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid + Sidebar -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-12">
+
+        <!-- Blog Posts -->
+        <div class="lg:col-span-2 space-y-8">
+          <h3 class="text-2xl font-bold mb-8 reveal-up">Latest <span class="gradient-text">Articles</span></h3>
+
+          <!-- Post 1 -->
+          <div class="service-card rounded-2xl overflow-hidden reveal-up group cursor-pointer">
+            <div class="md:flex">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=80" alt="UI Design" class="w-full md:w-56 h-48 md:h-auto object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="industry-tag px-2 py-0.5 rounded text-xs text-accent">UI/UX Design</span>
+                  <span class="text-gray-500 text-xs">March 20, 2024 · 6 min</span>
+                </div>
+                <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">10 UI Design Trends Dominating 2024</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">From glassmorphism and bento grids to AI-generated art and micro-interactions — we break down the design trends that matter this year.</p>
+                <a href="#" class="text-primary text-sm font-medium flex items-center hover:gap-3 transition-all gap-1">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="service-card rounded-2xl overflow-hidden reveal-up group cursor-pointer" style="transition-delay:0.1s;">
+            <div class="md:flex">
+              <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=400&h=250&fit=crop&q=80" alt="React" class="w-full md:w-56 h-48 md:h-auto object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="industry-tag px-2 py-0.5 rounded text-xs text-primary">Web Dev</span>
+                  <span class="text-gray-500 text-xs">March 15, 2024 · 9 min</span>
+                </div>
+                <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">React vs Next.js in 2024: Which Should You Choose?</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">A deep-dive comparison of React and Next.js performance, SEO capabilities, developer experience, and when to use each for your next project.</p>
+                <a href="#" class="text-primary text-sm font-medium flex items-center hover:gap-3 transition-all gap-1">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="service-card rounded-2xl overflow-hidden reveal-up group cursor-pointer" style="transition-delay:0.15s;">
+            <div class="md:flex">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80" alt="Digital Marketing" class="w-full md:w-56 h-48 md:h-auto object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="industry-tag px-2 py-0.5 rounded text-xs text-green-400">Marketing</span>
+                  <span class="text-gray-500 text-xs">March 10, 2024 · 7 min</span>
+                </div>
+                <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">SEO in 2024: How AI Search is Changing Everything</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">Google's SGE, Bing AI, and the rise of zero-click searches are fundamentally changing SEO strategy. Here's how to adapt and stay ahead.</p>
+                <a href="#" class="text-primary text-sm font-medium flex items-center hover:gap-3 transition-all gap-1">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 4 -->
+          <div class="service-card rounded-2xl overflow-hidden reveal-up group cursor-pointer" style="transition-delay:0.2s;">
+            <div class="md:flex">
+              <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=400&h=250&fit=crop&q=80" alt="Mobile App" class="w-full md:w-56 h-48 md:h-auto object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="industry-tag px-2 py-0.5 rounded text-xs text-orange-400">Mobile</span>
+                  <span class="text-gray-500 text-xs">March 5, 2024 · 5 min</span>
+                </div>
+                <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Flutter vs React Native: The 2024 Verdict</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">After working with both frameworks on 20+ projects, we share our honest take on performance, ecosystem, and developer experience.</p>
+                <a href="#" class="text-primary text-sm font-medium flex items-center hover:gap-3 transition-all gap-1">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 5 -->
+          <div class="service-card rounded-2xl overflow-hidden reveal-up group cursor-pointer" style="transition-delay:0.25s;">
+            <div class="md:flex">
+              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop&q=80" alt="Cloud" class="w-full md:w-56 h-48 md:h-auto object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="industry-tag px-2 py-0.5 rounded text-xs text-sky-400">Cloud</span>
+                  <span class="text-gray-500 text-xs">Feb 28, 2024 · 10 min</span>
+                </div>
+                <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">AWS vs Azure vs GCP: Choosing the Right Cloud in 2024</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">Cost, performance, AI services, and ecosystem — a practical guide to choosing the right cloud provider for your startup or enterprise.</p>
+                <a href="#" class="text-primary text-sm font-medium flex items-center hover:gap-3 transition-all gap-1">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex items-center justify-center gap-2 pt-8 reveal-up">
+            <button class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+            <button class="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-sm">1</button>
+            <button class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary transition-all text-sm">2</button>
+            <button class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary transition-all text-sm">3</button>
+            <button class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-8">
+
+          <!-- Search -->
+          <div class="service-card p-6 rounded-2xl reveal-right">
+            <h4 class="font-bold text-lg mb-4">Search</h4>
+            <div class="flex">
+              <input type="text" placeholder="Search articles..." class="form-input flex-1 px-4 py-3 rounded-l-lg text-sm">
+              <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-secondary transition-colors">
+                <i data-lucide="search" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="service-card p-6 rounded-2xl reveal-right" style="transition-delay:0.1s;">
+            <h4 class="font-bold text-lg mb-4">Categories</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>AI & Technology</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">12</span>
+              </li>
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>Web Development</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">18</span>
+              </li>
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>UI/UX Design</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">9</span>
+              </li>
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>Digital Marketing</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">7</span>
+              </li>
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>Mobile Development</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">6</span>
+              </li>
+              <li class="flex items-center justify-between text-gray-400 hover:text-primary transition-colors cursor-pointer group">
+                <span class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>Cloud & DevOps</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">8</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Popular Posts -->
+          <div class="service-card p-6 rounded-2xl reveal-right" style="transition-delay:0.15s;">
+            <h4 class="font-bold text-lg mb-4">Popular Posts</h4>
+            <div class="space-y-4">
+              <div class="flex gap-3 group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=60&fit=crop&q=80" alt="Post" class="w-16 h-12 rounded-lg object-cover flex-shrink-0">
+                <div>
+                  <p class="text-sm font-medium group-hover:text-primary transition-colors leading-tight">The Future of AI in Enterprise Software</p>
+                  <span class="text-xs text-gray-500">Mar 28, 2024</span>
+                </div>
+              </div>
+              <div class="flex gap-3 group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=60&fit=crop&q=80" alt="Post" class="w-16 h-12 rounded-lg object-cover flex-shrink-0">
+                <div>
+                  <p class="text-sm font-medium group-hover:text-primary transition-colors leading-tight">10 UI Design Trends Dominating 2024</p>
+                  <span class="text-xs text-gray-500">Mar 20, 2024</span>
+                </div>
+              </div>
+              <div class="flex gap-3 group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=80&h=60&fit=crop&q=80" alt="Post" class="w-16 h-12 rounded-lg object-cover flex-shrink-0">
+                <div>
+                  <p class="text-sm font-medium group-hover:text-primary transition-colors leading-tight">React vs Next.js in 2024</p>
+                  <span class="text-xs text-gray-500">Mar 15, 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="service-card p-6 rounded-2xl reveal-right" style="transition-delay:0.2s;">
+            <h4 class="font-bold text-lg mb-4">Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">React</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">AI</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">Node.js</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">UX Design</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">SEO</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">Flutter</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">AWS</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">Startup</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">Branding</span>
+              <span class="industry-tag px-3 py-1 rounded-full text-xs cursor-pointer text-gray-300">Python</span>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 border border-primary/20 reveal-right" style="transition-delay:0.25s;">
+            <h4 class="font-bold text-lg mb-2">Stay Updated</h4>
+            <p class="text-gray-400 text-sm mb-4">Get the latest insights delivered to your inbox monthly.</p>
+            <input type="email" placeholder="Your email address" class="form-input w-full px-4 py-3 rounded-lg text-sm mb-3">
+            <button class="btn-primary w-full text-sm">Subscribe Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+    <div class="absolute inset-0 grid-pattern opacity-30"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Want to Work With <span class="gradient-text">Us?</span></h2>
+      <p class="text-xl text-gray-300 mb-10">We're always looking for new challenges. Let's build your next big idea.</p>
+      <a href="contact.html" class="btn-primary text-lg px-10 py-4 magnetic-btn">
+        Get In Touch <i data-lucide="arrow-right" class="w-5 h-5 inline ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darker pt-20 pb-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
+            <span class="font-bold text-xl">SM Infotech</span>
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">Transforming businesses through innovative technology solutions and digital excellence.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="about.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Portfolio</a></li>
+            <li><a href="blog.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Blog</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Services</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Web Development</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>UI/UX Design</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>AI Solutions</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Digital Marketing</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Branding</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"></i><span>123 Tech Park, Innovation Drive<br>Silicon Valley, CA 94025</span></li>
+            <li class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>hello@sminfotech.com</span></li>
+            <li class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>+1 (555) 123-4567</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2024 SM Infotech. All rights reserved.</p>
+        <div class="flex space-x-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

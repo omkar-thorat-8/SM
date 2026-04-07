@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | SM Infotech</title>
+  <meta name="description" content="Explore SM Infotech's comprehensive IT services — Web Development, UI/UX Design, AI Solutions, Digital Marketing, Branding & App Development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#8b5cf6', secondary: '#a855f7', accent: '#06b6d4', dark: '#0a0a0f', darker: '#0f172a' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark text-white antialiased">
+
+  <div class="custom-cursor hidden md:block"></div>
+  <div class="loader"><div class="loader-circle"></div></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center space-x-2 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight group-hover:text-primary transition-colors">SM <span class="text-primary">Infotech</span></span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium">Home</a>
+          <a href="about.html" class="nav-link font-medium">About</a>
+          <a href="services.html" class="nav-link active font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link font-medium">Blog</a>
+          <a href="contact.html" class="nav-link font-medium">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-300 hover:text-white transition-colors font-medium">Login</a>
+          <a href="contact.html" class="btn-primary magnetic-btn text-sm">Get Started</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="hamburger text-gray-300 hover:text-white focus:outline-none">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-darker glass border-l border-primary/20 z-50 p-8 pt-24">
+      <div class="flex flex-col space-y-6">
+        <a href="index.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Home</a>
+        <a href="about.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">About</a>
+        <a href="services.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">Services</a>
+        <a href="portfolio.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Portfolio</a>
+        <a href="blog.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Blog</a>
+        <a href="contact.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Contact</a>
+        <hr class="border-gray-700">
+        <a href="login.html" class="text-xl font-medium text-gray-400 hover:text-white">Login</a>
+        <a href="contact.html" class="btn-primary text-center">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative pt-40 pb-24 overflow-hidden">
+    <div class="absolute inset-0 animated-gradient opacity-30"></div>
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-animation"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl float-animation" style="animation-delay:2s;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 reveal-up">
+        <i data-lucide="layers" class="w-4 h-4 mr-2"></i> What We Offer
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 reveal-up">Our <span class="gradient-text">Services</span></h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto reveal-up">Comprehensive technology solutions tailored to accelerate your business growth and digital transformation.</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-24 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Web Development -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-24 reveal-up">
+        <div>
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-4">
+            <i data-lucide="globe" class="w-4 h-4 mr-2"></i> Web Development
+          </div>
+          <h2 class="text-4xl font-bold mb-6">Modern Web <span class="gradient-text">Development</span></h2>
+          <p class="text-gray-400 text-lg mb-6 leading-relaxed">We build fast, scalable, and SEO-optimized websites and web applications using the latest frameworks like React, Next.js, Node.js, and Python/Django.</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0"></i>Custom web application development</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0"></i>E-commerce platforms (Shopify, WooCommerce, custom)</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0"></i>Progressive Web Apps (PWA)</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0"></i>API development & integrations</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0"></i>Performance optimization & SEO</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4 inline ml-2"></i></a>
+        </div>
+        <div class="service-card p-8 rounded-2xl">
+          <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
+            <i data-lucide="globe" class="w-8 h-8 text-blue-400"></i>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="bg-blue-500/5 border border-blue-500/10 p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-blue-400">React</div><div class="text-xs text-gray-500 mt-1">Frontend</div>
+            </div>
+            <div class="bg-blue-500/5 border border-blue-500/10 p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-blue-400">Node.js</div><div class="text-xs text-gray-500 mt-1">Backend</div>
+            </div>
+            <div class="bg-blue-500/5 border border-blue-500/10 p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-blue-400">Next.js</div><div class="text-xs text-gray-500 mt-1">Full-Stack</div>
+            </div>
+            <div class="bg-blue-500/5 border border-blue-500/10 p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-blue-400">Python</div><div class="text-xs text-gray-500 mt-1">Backend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI/UX Design -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-24 reveal-up">
+        <div class="md:order-2">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium mb-4">
+            <i data-lucide="palette" class="w-4 h-4 mr-2"></i> UI/UX Design
+          </div>
+          <h2 class="text-4xl font-bold mb-6">Human-Centered <span class="gradient-text">Design</span></h2>
+          <p class="text-gray-400 text-lg mb-6 leading-relaxed">We craft intuitive, beautiful interfaces that delight users and drive engagement. Every pixel is intentional, every interaction thoughtful.</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 flex-shrink-0"></i>User research & persona development</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 flex-shrink-0"></i>Wireframing & prototyping</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 flex-shrink-0"></i>Design system creation</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 flex-shrink-0"></i>Usability testing & iteration</li>
+            <li class="flex items-center text-gray-300"><i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 flex-shrink-0"></i>Figma & Adobe XD designs</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4 inline ml-2"></i></a>
+        </div>
+        <div class="md:order-1 service-card p-8 rounded-2xl">
+          <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
+            <i data-lucide="palette" class="w-8 h-8 text-purple-400"></i>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400 text-sm">User Research</span>
+              <div class="flex-1 mx-4 bg-white/5 rounded-full h-2"><div class="bg-purple-400 h-2 rounded-full" style="width:95%"></div></div>
+              <span class="text-purple-400 text-sm font-bold">95%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400 text-sm">Prototyping</span>
+              <div class="flex-1 mx-4 bg-white/5 rounded-full h-2"><div class="bg-purple-400 h-2 rounded-full" style="width:90%"></div></div>
+              <span class="text-purple-400 text-sm font-bold">90%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400 text-sm">Design Systems</span>
+              <div class="flex-1 mx-4 bg-white/5 rounded-full h-2"><div class="bg-purple-400 h-2 rounded-full" style="width:88%"></div></div>
+              <span class="text-purple-400 text-sm font-bold">88%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400 text-sm">Usability Testing</span>
+              <div class="flex-1 mx-4 bg-white/5 rounded-full h-2"><div class="bg-purple-400 h-2 rounded-full" style="width:92%"></div></div>
+              <span class="text-purple-400 text-sm font-bold">92%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Services Cards -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">More <span class="gradient-text">Capabilities</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">A full suite of digital services under one roof.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-container">
+        <!-- AI & Automation -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer">
+          <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="brain" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">AI & Automation</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Machine learning, NLP, computer vision, and intelligent automation to streamline operations and unlock insights.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-cyan-400 mr-1"></i>ML model development</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-cyan-400 mr-1"></i>Chatbots & virtual assistants</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-cyan-400 mr-1"></i>Process automation (RPA)</li>
+          </ul>
+        </div>
+        <!-- Mobile App -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer" style="transition-delay:0.1s;">
+          <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="smartphone" class="w-7 h-7 text-orange-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-orange-400 transition-colors">App Development</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Native iOS & Android and cross-platform apps with React Native and Flutter that users love to engage with.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-1"></i>iOS & Android native apps</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-1"></i>React Native / Flutter</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-1"></i>App store optimization</li>
+          </ul>
+        </div>
+        <!-- Branding -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer" style="transition-delay:0.2s;">
+          <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="hexagon" class="w-7 h-7 text-pink-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-pink-400 transition-colors">Branding & Identity</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Strategic brand development — from logo and visual identity to brand voice and full brand guidelines.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-pink-400 mr-1"></i>Logo & identity design</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-pink-400 mr-1"></i>Brand guidelines</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-pink-400 mr-1"></i>Brand storytelling</li>
+          </ul>
+        </div>
+        <!-- Digital Marketing -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer">
+          <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="trending-up" class="w-7 h-7 text-green-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-green-400 transition-colors">Digital Marketing</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Data-driven campaigns across SEO, PPC, social media, and content marketing to grow your digital footprint.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-green-400 mr-1"></i>SEO & content marketing</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-green-400 mr-1"></i>Google & Meta Ads (PPC)</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-green-400 mr-1"></i>Social media management</li>
+          </ul>
+        </div>
+        <!-- Cloud & DevOps -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer" style="transition-delay:0.1s;">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="cloud" class="w-7 h-7 text-sky-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-sky-400 transition-colors">Cloud & DevOps</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Scalable cloud architecture, CI/CD pipelines, and infrastructure management on AWS, Azure, and GCP.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-sky-400 mr-1"></i>AWS / Azure / GCP setup</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-sky-400 mr-1"></i>CI/CD pipelines</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-sky-400 mr-1"></i>Docker & Kubernetes</li>
+          </ul>
+        </div>
+        <!-- Consulting -->
+        <div class="service-card p-8 rounded-2xl reveal-up group cursor-pointer" style="transition-delay:0.2s;">
+          <div class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="lightbulb" class="w-7 h-7 text-yellow-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-yellow-400 transition-colors">IT Consulting</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">Strategic technology consulting to align your IT infrastructure with business goals and future growth plans.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-yellow-400 mr-1"></i>Digital transformation roadmap</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-yellow-400 mr-1"></i>Tech stack advisory</li>
+            <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-yellow-400 mr-1"></i>Security audits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal-up">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <i data-lucide="tag" class="w-4 h-4 mr-2"></i> Pricing
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Transparent <span class="gradient-text">Pricing</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">No hidden fees. Choose the plan that fits your needs.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 stagger-container">
+        <!-- Starter -->
+        <div class="service-card p-8 rounded-2xl reveal-up text-center">
+          <div class="text-gray-400 text-sm uppercase tracking-widest mb-2">Starter</div>
+          <div class="text-5xl font-bold mb-1">$999</div>
+          <div class="text-gray-500 mb-8">one-time project</div>
+          <ul class="space-y-3 text-gray-400 text-left mb-8">
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>5-page website</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Responsive design</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Basic SEO setup</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Contact form</li>
+            <li class="flex items-center text-gray-600"><i data-lucide="x" class="w-5 h-5 mr-3"></i>Custom integrations</li>
+            <li class="flex items-center text-gray-600"><i data-lucide="x" class="w-5 h-5 mr-3"></i>Ongoing support</li>
+          </ul>
+          <a href="contact.html" class="btn-secondary w-full block text-center">Get Started</a>
+        </div>
+        <!-- Growth (Featured) -->
+        <div class="relative p-8 rounded-2xl text-center bg-gradient-to-b from-primary/20 to-accent/10 border border-primary/30 reveal-up" style="transition-delay:0.1s;">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</div>
+          <div class="text-primary text-sm uppercase tracking-widest mb-2">Growth</div>
+          <div class="text-5xl font-bold mb-1">$2,499</div>
+          <div class="text-gray-500 mb-8">one-time project</div>
+          <ul class="space-y-3 text-gray-300 text-left mb-8">
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Up to 15 pages</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Custom UI/UX design</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>Advanced SEO</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>CMS integration</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>3rd party integrations</li>
+            <li class="flex items-center text-gray-600"><i data-lucide="x" class="w-5 h-5 mr-3"></i>Ongoing support</li>
+          </ul>
+          <a href="contact.html" class="btn-primary w-full block text-center">Get Started</a>
+        </div>
+        <!-- Enterprise -->
+        <div class="service-card p-8 rounded-2xl reveal-up text-center" style="transition-delay:0.2s;">
+          <div class="text-gray-400 text-sm uppercase tracking-widest mb-2">Enterprise</div>
+          <div class="text-5xl font-bold mb-1">Custom</div>
+          <div class="text-gray-500 mb-8">tailored quote</div>
+          <ul class="space-y-3 text-gray-400 text-left mb-8">
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>Unlimited pages</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>Full custom development</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>AI & automation features</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>Priority support</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>Dedicated project manager</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-accent mr-3"></i>SLA & maintenance</li>
+          </ul>
+          <a href="contact.html" class="btn-secondary w-full block text-center">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+    <div class="absolute inset-0 grid-pattern opacity-30"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-up">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">Not Sure Which <span class="gradient-text">Service</span> You Need?</h2>
+      <p class="text-xl text-gray-300 mb-10">Let's talk. We'll analyze your needs and recommend the best solution.</p>
+      <a href="contact.html" class="btn-primary text-lg px-10 py-4 magnetic-btn">
+        Book a Free Consultation <i data-lucide="arrow-right" class="w-5 h-5 inline ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darker pt-20 pb-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
+            <span class="font-bold text-xl">SM Infotech</span>
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">Transforming businesses through innovative technology solutions and digital excellence.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="about.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Portfolio</a></li>
+            <li><a href="blog.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Blog</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Services</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Web Development</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>UI/UX Design</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>AI Solutions</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Digital Marketing</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Branding</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"></i><span>123 Tech Park, Innovation Drive<br>Silicon Valley, CA 94025</span></li>
+            <li class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>hello@sminfotech.com</span></li>
+            <li class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>+1 (555) 123-4567</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2024 SM Infotech. All rights reserved.</p>
+        <div class="flex space-x-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

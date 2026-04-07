@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | SM Infotech</title>
+  <meta name="description" content="Learn about SM Infotech - our story, mission, team, and values driving digital transformation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#8b5cf6', secondary: '#a855f7', accent: '#06b6d4', dark: '#0a0a0f', darker: '#0f172a' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark text-white antialiased">
+
+  <div class="custom-cursor hidden md:block"></div>
+  <div class="loader"><div class="loader-circle"></div></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center space-x-2 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight group-hover:text-primary transition-colors">SM <span class="text-primary">Infotech</span></span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium">Home</a>
+          <a href="about.html" class="nav-link active font-medium">About</a>
+          <a href="services.html" class="nav-link font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link font-medium">Blog</a>
+          <a href="contact.html" class="nav-link font-medium">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-300 hover:text-white transition-colors font-medium">Login</a>
+          <a href="contact.html" class="btn-primary magnetic-btn text-sm">Get Started</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="hamburger text-gray-300 hover:text-white focus:outline-none">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-darker glass border-l border-primary/20 z-50 p-8 pt-24">
+      <div class="flex flex-col space-y-6">
+        <a href="index.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Home</a>
+        <a href="about.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">About</a>
+        <a href="services.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Services</a>
+        <a href="portfolio.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Portfolio</a>
+        <a href="blog.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Blog</a>
+        <a href="contact.html" class="text-2xl font-bold text-gray-300 hover:text-primary transition-colors">Contact</a>
+        <hr class="border-gray-700">
+        <a href="login.html" class="text-xl font-medium text-gray-400 hover:text-white">Login</a>
+        <a href="contact.html" class="btn-primary text-center">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative pt-40 pb-24 overflow-hidden">
+    <div class="absolute inset-0 animated-gradient opacity-30"></div>
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl float-animation"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float-animation" style="animation-delay:2s;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 reveal-up">
+        <i data-lucide="info" class="w-4 h-4 mr-2"></i> About SM Infotech
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 reveal-up">Our <span class="gradient-text">Story</span></h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto reveal-up">Driven by passion, powered by technology — we've been building digital futures since day one.</p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-24 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+            <i data-lucide="target" class="w-4 h-4 mr-2"></i> Who We Are
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Crafting Digital <span class="gradient-text">Excellence</span></h2>
+          <p class="text-gray-400 text-lg mb-6 leading-relaxed">SM Infotech is a leading technology solutions provider dedicated to transforming businesses through innovative digital strategies. Founded with a vision to bridge the gap between complex technology and business growth, we deliver solutions that matter.</p>
+          <p class="text-gray-400 text-lg mb-8 leading-relaxed">Our team of expert developers, designers, and strategists work collaboratively to create bespoke solutions that drive real results. From startups to enterprises, we partner with visionaries to build the future.</p>
+          <div class="flex items-center space-x-8">
+            <div>
+              <div class="text-3xl font-bold text-primary">98%</div>
+              <div class="text-gray-500 text-sm">Client Satisfaction</div>
+            </div>
+            <div class="w-px h-12 bg-gray-700"></div>
+            <div>
+              <div class="text-3xl font-bold text-accent">24/7</div>
+              <div class="text-gray-500 text-sm">Support Available</div>
+            </div>
+            <div class="w-px h-12 bg-gray-700"></div>
+            <div>
+              <div class="text-3xl font-bold text-secondary">12+</div>
+              <div class="text-gray-500 text-sm">Years Experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative reveal-right">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-20 rounded-2xl transform rotate-3"></div>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="SM Infotech Team" class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+          <div class="absolute -bottom-6 -left-6 bg-darker glass p-6 rounded-xl border border-primary/20 shadow-xl">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                <i data-lucide="award" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white">Top IT Company</div>
+                <div class="text-sm text-gray-400">Award 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Cards -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid md:grid-cols-3 gap-8 stagger-container">
+        <div class="service-card p-8 rounded-2xl reveal-up text-center">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="eye" class="w-8 h-8 text-primary"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+          <p class="text-gray-400 leading-relaxed">To be the most trusted technology partner for businesses worldwide, driving digital transformation that creates lasting value and meaningful impact.</p>
+        </div>
+        <div class="service-card p-8 rounded-2xl reveal-up text-center" style="transition-delay:0.1s;">
+          <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="target" class="w-8 h-8 text-accent"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+          <p class="text-gray-400 leading-relaxed">To deliver innovative, scalable, and future-ready digital solutions that empower businesses to thrive in an ever-evolving technological landscape.</p>
+        </div>
+        <div class="service-card p-8 rounded-2xl reveal-up text-center" style="transition-delay:0.2s;">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="heart" class="w-8 h-8 text-secondary"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Our Values</h3>
+          <p class="text-gray-400 leading-relaxed">Integrity, innovation, and excellence in everything we do. We believe in transparent communication, continuous learning, and putting clients first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-24 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">By The <span class="gradient-text">Numbers</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Our track record of delivering results speaks for itself.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 stagger-container">
+        <div class="text-center reveal-scale">
+          <div class="text-5xl font-bold gradient-text counter" data-target="150">0</div>
+          <div class="text-gray-400 mt-2">Projects Delivered</div>
+        </div>
+        <div class="text-center reveal-scale" style="transition-delay:0.1s;">
+          <div class="text-5xl font-bold gradient-text counter" data-target="50">0</div>
+          <div class="text-gray-400 mt-2">Happy Clients</div>
+        </div>
+        <div class="text-center reveal-scale" style="transition-delay:0.2s;">
+          <div class="text-5xl font-bold gradient-text counter" data-target="12">0</div>
+          <div class="text-gray-400 mt-2">Years Experience</div>
+        </div>
+        <div class="text-center reveal-scale" style="transition-delay:0.3s;">
+          <div class="text-5xl font-bold gradient-text counter" data-target="25">0</div>
+          <div class="text-gray-400 mt-2">Team Members</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal-up">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <i data-lucide="users" class="w-4 h-4 mr-2"></i> Meet the Team
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">The <span class="gradient-text">Minds</span> Behind SM Infotech</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">A passionate team of experts committed to your digital success.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-container">
+        <!-- Team Member 1 -->
+        <div class="service-card p-6 rounded-2xl reveal-up text-center group">
+          <div class="relative mb-6">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80" alt="CEO" class="w-24 h-24 rounded-full object-cover mx-auto border-2 border-primary/30 group-hover:border-primary transition-colors">
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary/20 text-primary text-xs px-3 py-1 rounded-full border border-primary/30">CEO</div>
+          </div>
+          <h3 class="font-bold text-lg mt-4 group-hover:text-primary transition-colors">Arjun Sharma</h3>
+          <p class="text-gray-500 text-sm mb-4">Founder & CEO</p>
+          <p class="text-gray-400 text-sm leading-relaxed">15+ years in tech leadership with a passion for digital transformation.</p>
+          <div class="flex justify-center space-x-3 mt-4">
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="service-card p-6 rounded-2xl reveal-up text-center group" style="transition-delay:0.1s;">
+          <div class="relative mb-6">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80" alt="CTO" class="w-24 h-24 rounded-full object-cover mx-auto border-2 border-accent/30 group-hover:border-accent transition-colors">
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-accent/20 text-accent text-xs px-3 py-1 rounded-full border border-accent/30">CTO</div>
+          </div>
+          <h3 class="font-bold text-lg mt-4 group-hover:text-accent transition-colors">Priya Mehta</h3>
+          <p class="text-gray-500 text-sm mb-4">Chief Technology Officer</p>
+          <p class="text-gray-400 text-sm leading-relaxed">AI/ML expert and full-stack architect with a flair for elegant solutions.</p>
+          <div class="flex justify-center space-x-3 mt-4">
+            <a href="#" class="text-gray-500 hover:text-accent transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="text-gray-500 hover:text-accent transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="service-card p-6 rounded-2xl reveal-up text-center group" style="transition-delay:0.2s;">
+          <div class="relative mb-6">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&q=80" alt="Design Lead" class="w-24 h-24 rounded-full object-cover mx-auto border-2 border-secondary/30 group-hover:border-secondary transition-colors">
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-secondary/20 text-secondary text-xs px-3 py-1 rounded-full border border-secondary/30">Design</div>
+          </div>
+          <h3 class="font-bold text-lg mt-4 group-hover:text-secondary transition-colors">Rahul Verma</h3>
+          <p class="text-gray-500 text-sm mb-4">Head of Design</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Award-winning UI/UX designer crafting intuitive digital experiences.</p>
+          <div class="flex justify-center space-x-3 mt-4">
+            <a href="#" class="text-gray-500 hover:text-secondary transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="text-gray-500 hover:text-secondary transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="service-card p-6 rounded-2xl reveal-up text-center group" style="transition-delay:0.3s;">
+          <div class="relative mb-6">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=200&fit=crop&q=80" alt="Marketing Lead" class="w-24 h-24 rounded-full object-cover mx-auto border-2 border-pink-500/30 group-hover:border-pink-400 transition-colors">
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-500/20 text-pink-400 text-xs px-3 py-1 rounded-full border border-pink-500/30">Marketing</div>
+          </div>
+          <h3 class="font-bold text-lg mt-4 group-hover:text-pink-400 transition-colors">Sneha Patel</h3>
+          <p class="text-gray-500 text-sm mb-4">Marketing Director</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Growth strategist helping brands connect with their ideal audience.</p>
+          <div class="flex justify-center space-x-3 mt-4">
+            <a href="#" class="text-gray-500 hover:text-pink-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="text-gray-500 hover:text-pink-400 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-24 bg-darker">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal-up">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+          <i data-lucide="clock" class="w-4 h-4 mr-2"></i> Our Journey
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">The Road <span class="gradient-text">Travelled</span></h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-primary to-accent"></div>
+        <!-- Timeline items -->
+        <div class="space-y-12">
+          <div class="grid md:grid-cols-2 gap-8 items-center reveal-up">
+            <div class="md:text-right">
+              <div class="text-primary font-bold text-lg mb-1">2012</div>
+              <h3 class="text-xl font-bold mb-2">Founded</h3>
+              <p class="text-gray-400">SM Infotech was founded with a small team of 3 passionate developers with a dream to build world-class software.</p>
+            </div>
+            <div class="md:pl-8">
+              <div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center mx-auto md:mx-0">
+                <i data-lucide="rocket" class="w-6 h-6 text-primary"></i>
+              </div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-center reveal-up" style="transition-delay:0.1s;">
+            <div class="md:order-2">
+              <div class="text-accent font-bold text-lg mb-1">2015</div>
+              <h3 class="text-xl font-bold mb-2">First Major Client</h3>
+              <p class="text-gray-400">Secured our first enterprise client and grew the team to 10 members, expanding into UI/UX and digital marketing.</p>
+            </div>
+            <div class="md:order-1 md:text-right md:pr-8">
+              <div class="w-12 h-12 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center ml-auto">
+                <i data-lucide="users" class="w-6 h-6 text-accent"></i>
+              </div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-center reveal-up" style="transition-delay:0.2s;">
+            <div class="md:text-right">
+              <div class="text-secondary font-bold text-lg mb-1">2019</div>
+              <h3 class="text-xl font-bold mb-2">AI Division Launch</h3>
+              <p class="text-gray-400">Launched our AI & Automation division, offering machine learning solutions to enterprise clients globally.</p>
+            </div>
+            <div class="md:pl-8">
+              <div class="w-12 h-12 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center mx-auto md:mx-0">
+                <i data-lucide="brain" class="w-6 h-6 text-secondary"></i>
+              </div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-center reveal-up" style="transition-delay:0.3s;">
+            <div class="md:order-2">
+              <div class="text-primary font-bold text-lg mb-1">2024</div>
+              <h3 class="text-xl font-bold mb-2">150+ Projects Milestone</h3>
+              <p class="text-gray-400">Crossed 150 successfully delivered projects and 50+ satisfied clients worldwide with a team of 25 professionals.</p>
+            </div>
+            <div class="md:order-1 md:text-right md:pr-8">
+              <div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center ml-auto">
+                <i data-lucide="award" class="w-6 h-6 text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+    <div class="absolute inset-0 grid-pattern opacity-30"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-up">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to Work <span class="gradient-text">Together?</span></h2>
+      <p class="text-xl text-gray-300 mb-10">Join 50+ businesses who trust SM Infotech to power their digital growth.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="contact.html" class="btn-primary text-lg px-10 py-4 magnetic-btn">
+          Start a Project <i data-lucide="arrow-right" class="w-5 h-5 inline-block ml-2"></i>
+        </a>
+        <a href="services.html" class="btn-secondary text-lg px-10 py-4 magnetic-btn">
+          Our Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darker pt-20 pb-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+            </div>
+            <span class="font-bold text-xl">SM Infotech</span>
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">Transforming businesses through innovative technology solutions and digital excellence.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="about.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Portfolio</a></li>
+            <li><a href="blog.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Blog</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Services</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Web Development</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>UI/UX Design</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>AI Solutions</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Digital Marketing</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2"></i>Branding</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"></i><span>123 Tech Park, Innovation Drive<br>Silicon Valley, CA 94025</span></li>
+            <li class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>hello@sminfotech.com</span></li>
+            <li class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-primary flex-shrink-0"></i><span>+1 (555) 123-4567</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2024 SM Infotech. All rights reserved.</p>
+        <div class="flex space-x-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
