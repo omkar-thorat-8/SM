@@ -1,0 +1,1 @@
+sminfotechdemo.netlify.app
