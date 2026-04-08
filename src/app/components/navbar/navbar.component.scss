@@ -1,0 +1,12 @@
+.navbar {
+  background: linear-gradient(to right, #0d1b2a, #1b263b);
+  backdrop-filter: blur(10px);
+}
+
+.nav-link {
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00b4d8 !important;
+}

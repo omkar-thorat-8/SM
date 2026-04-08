@@ -1,0 +1,16 @@
+<section class="text-center">
+  <div class="container">
+    <h2>Our Projects</h2>
+
+    <div class="row mt-4">
+
+      <div class="col-md-4" *ngFor="let p of projects">
+        <div class="card p-3 shadow project-card">
+          <h5>{{ p.name }}</h5>
+          <p>{{ p.desc }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

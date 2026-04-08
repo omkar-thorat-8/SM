@@ -1,0 +1,8 @@
+.service-box {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
