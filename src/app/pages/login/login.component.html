@@ -1,0 +1,46 @@
+<section class="min-h-screen flex items-center justify-center bg-[#0f172a]">
+
+  <div class="bg-[#111827] p-8 rounded-2xl w-full max-w-md">
+
+    <h2 class="text-3xl text-white text-center mb-6">
+      {{ isLogin ? 'Welcome Back' : 'Create Account' }}
+    </h2>
+
+    <form class="space-y-4">
+
+      <input *ngIf="!isLogin"
+        placeholder="Full Name"
+        class="w-full p-3 bg-[#1f2937] text-white rounded-lg" />
+
+      <input
+        placeholder="Email"
+        class="w-full p-3 bg-[#1f2937] text-white rounded-lg" />
+
+      <input
+        type="password"
+        placeholder="Password"
+        class="w-full p-3 bg-[#1f2937] text-white rounded-lg" />
+
+      <button class="w-full bg-gradient-to-r from-purple-500 to-cyan-500 p-3 rounded-lg text-white">
+        {{ isLogin ? 'Login' : 'Sign Up' }}
+      </button>
+
+    </form>
+
+    <p class="text-gray-400 text-center mt-4">
+
+      <span *ngIf="isLogin">
+        Don’t have an account?
+        <a (click)="isLogin=false" class="text-purple-400 cursor-pointer">Sign up</a>
+      </span>
+
+      <span *ngIf="!isLogin">
+        Already have an account?
+        <a (click)="isLogin=true" class="text-purple-400 cursor-pointer">Login</a>
+      </span>
+
+    </p>
+
+  </div>
+
+</section>
